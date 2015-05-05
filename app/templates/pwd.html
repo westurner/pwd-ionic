@@ -1,0 +1,113 @@
+<ion-view view-title="pwd">
+  <ion-content padding="true">
+    <!--<body onload="makeChart(); document.forms[0].seed.focus()">-->
+     <div class="row">
+      <form action="" method="post" onsubmit="return false;">
+       <div class="list">
+        <div class="item item-icon-left">
+         <i class="icon ion-grid"></i>
+         <label class="item-input">
+          <textarea name="seed"
+           onkeyup="return seedKeypressed();"
+           rows=2 cols=45
+           placeholder="seed"></textarea>
+         </label>
+        </div>
+        <div class="item item-icon-left">
+         <i class="icon ion-more"></i>
+         <label class="item-input">
+          <textarea name="pwd"
+           onkeyup="return pwdKeypressed();"
+           rows=1 cols=45
+           placeholder="key"></textarea>
+         </label>
+        </div>
+        <div class="item item-checkbox">
+         <div class="icon ion-pound" alt='include number characters'></div>
+         <span class='lbl'>numbers</span>
+         <label class="checkbox">
+          <input name="numbers"
+           checked=""
+           onclick="makeChart();"
+           type="checkbox"
+           /></label>
+        </div>
+        <div class="item item-checkbox">
+         <div class="icon ion-help" alt='include punctuation characters'></div>
+         <span class='lbl'>punctuation</span>
+         <label class="checkbox">
+          <input name="punct"
+           onclick="makeChart();"
+           type="checkbox"
+           /></label>
+         </div>
+       </div>
+       <div class="list">
+        <div class="item item-icon-left">
+         <i class="icon ion-more" alt=''></i>
+         <div class="item-content" style="padding-left:12px">
+          <div id="chartResults">
+          </div>
+         </div>
+        </div>
+        <div class="item item-icon-left">
+         <i class="icon ion-grid" alt=''></i>
+         <div class="item-content" style="padding-left:12px">
+          <div id="chartContainer">
+           <div id="chartLabel">
+            <div id="CNB">
+             <i class="icon ion-more nop"></i>
+            </div>
+           </div>
+           <div id="chart"></div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div id="actions" class="nop" class="row">
+        <!--
+         <button class="button button-block" name="open-iframe" type="button"
+          onClick='
+          var modalPadding=12;
+          var w = document.createElement("div");
+           w.className="iframeModal";
+           w.style.width=(window.innerWidth-(modalPadding*2)) + "px";
+           w.style.height=(window.innerHeight-(modalPadding*2)) + "px";
+           w.style.top=0;
+           w.style.left=0;
+           w.style.padding=modalPadding + "px";
+           w.style.background="#AAA";
+           w.style.position="fixed";
+           document.body.appendChild(w);
+
+           var closeBtn = document.createElement("button");
+           closeBtn.innerHTML = "Close";
+           closeBtn.onclick = function() {
+            w.parentNode.removeChild(w);  // w.remove()
+           };
+           w.appendChild(closeBtn);
+
+           var i = document.createElement("iframe");
+           i.setAttribute("width", w.clientWidth-(3*modalPadding));
+           i.setAttribute("height",w.clientHeight-(2*modalPadding));
+           i.src = window.location;
+           w.appendChild(i);
+           '>iframe</button>
+          <button class="button button-block icon-left ion-printer" name="print" type="button" onClick="window.print()" value="print">print</button>
+          -->
+          <button class="button button-block button-assertive icon-left ion-android-close" name="reset" type="button"
+           onClick='
+            document.forms[0].seed.value="";
+            document.forms[0].pwd.value="";
+            document.forms[0].numbers.checked=true;
+            document.forms[0].punct.checked=true;
+            pwdKeypressed();
+            document.getElementById("chart").innerHTML="";
+            document.getElementById("CNB").innerHTML="";
+            '>reset</button>
+       </div>
+      </form>
+     </div>
+     <!-- </body> -->
+  </ion-content>
+</ion-view>
