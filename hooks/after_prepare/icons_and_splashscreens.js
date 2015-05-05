@@ -20,7 +20,7 @@ var Orchestrator = require('orchestrator');
 
 var BASES = {
   android: 'res',
-  ios: 'PwdIonic/Resources'
+  ios: 'pwd/Resources'
 };
 var RESOURCE_DIR = 'resources';
 
