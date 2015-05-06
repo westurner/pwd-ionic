@@ -14,24 +14,22 @@ p {
  border-width:1px;
  border:3px black;
  font-family:monospace;
- font-size:10pt;
- padding: 12px;
-}
-#chartResults {
-}
-#chartContainer {
+ padding: 12px 30px;
+ margin: 0 auto;
  display:inline-block;
+ margin-left: 20px;
+ margin-bottom: 12px;
 }
 #chartContainer table {
- margin: 0 auto;
 }
 
 #chartLabel {
+ font-size: 1.2em;
 }
 #CNB {
  font-weight: bold;
  margin: 8px 0;
- text-align: center;
+ text-decoration: underline;
 }
 
 div.resultTableContainer {
@@ -53,8 +51,18 @@ textarea {
  /* padding: 4px; 
  width: 100%; */
  border-bottom: 2px solid #e0e0e0;
+ /* workaround for clipped shadows */
+ margin-right: 8px;
+}
+
+textarea, #chartContainer {
  box-shadow: 1px 1px 8px #b0b0b0;
 }
+textarea:focus {
+ background: #fafafa;
+ box-shadow: 1px 1px 8px #707070;
+}
+
 span.emph {
  /* font-weight: bold; */
  text-decoration: underline;
@@ -78,7 +86,8 @@ span.lbl {
 }
 
 .item {
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
 }
 
 .item-icon-left {
@@ -99,6 +108,16 @@ span.lbl {
 .bar.bar-stable .title {
   color: #FFFFFF;
   font-weight: bold;
+}
+
+.checkbox input {
+ opacity: 0.8;
+ box-shadow: none;
+}
+
+.checkbox input:focus {
+ opacity: 1.0;
+ box-shadow: 1px 1px 8px #707070;
 }
 
 /* </ionic */
